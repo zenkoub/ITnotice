@@ -20,6 +20,7 @@
     "eslint": "latest",
     "eslint-config-next": "latest",
     "postcss": "latest",
-    "tailwindcss": "latest"
+    "tailwindcss": "latest",
+    "tailwindcss-animated": "^1.0.1"
   }
 }

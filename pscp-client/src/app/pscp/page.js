@@ -9,7 +9,6 @@ export default function Pscp() {
     return (
         <>
             <div className="">
-                <Navbar data={hee} />
             </div>
         </>
     )

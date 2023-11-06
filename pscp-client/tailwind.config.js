@@ -7,6 +7,7 @@ module.exports = {
   ],
   theme: {
     extend: {
+      display: ["group-hover"],
       scale: {
         '-100': '-1',
       },

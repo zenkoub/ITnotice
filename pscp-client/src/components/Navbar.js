@@ -6,6 +6,7 @@ import { LuCircuitBoard } from "react-icons/lu";
 import { BiNetworkChart } from "react-icons/bi";
 import { TbMathIntegralX, TbMessageLanguage } from "react-icons/tb";
 import { VscSymbolMisc } from 'react-icons/vsc'
+import Link from "next/link";
 
 export default function Navbar() {
     const [open, setOpen] = useState(false)
@@ -39,18 +40,20 @@ export default function Navbar() {
                         </button>
                     </div>
                     {list.map(e => {
-                        return <div className="relative h-20 border-b-2 border-white">
-                            <button className={`bg-red-800 transition-transform h-full w-full`}>
-                                <div className="flex justify-center items-center align-middle h-full">
-                                    {open ? <div className="flex items-center justify-center gap-2">
-                                        <e.icon size={25} />
-                                        <span className="text-lg">{e.title}</span>
-                                    </div> :
-                                        <e.icon size={25} />
-                                    }
-                                </div>
-                            </button>
-                        </div>
+                        return <Link href={e.href}>
+                            <div className="relative h-20 border-b-2 border-white">
+                                <button className={`bg-red-800 transition-transform h-full w-full`}>
+                                    <div className="flex justify-center items-center align-middle h-full">
+                                        {open ? <div className="flex items-center justify-center gap-2">
+                                            <e.icon size={25} />
+                                            <span className="text-lg">{e.title}</span>
+                                        </div> :
+                                            <e.icon size={25} />
+                                        }
+                                    </div>
+                                </button>
+                            </div>
+                        </Link>
                     })}
                 </div>
             </div>

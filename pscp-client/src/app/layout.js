@@ -17,7 +17,7 @@ export default function Layout({ children }) {
         <div className="flex flex-col w-full min-h-screen">
           <Navbar />
           <main className="flex-auto mt-7">
-            <div className="container max-w-lg md:max-w-2xl mx-auto px-5">
+            <div className="container max-w-7xl mx-auto px-5">
               {children}
             </div>
           </main>

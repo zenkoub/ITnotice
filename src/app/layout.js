@@ -13,7 +13,7 @@ export const metadata = {
 export default function Layout({ children }) {
   return (
     <html lang="en">
-      <body className="dark">
+      <body className="bg-[#03001C]">
         <div className="flex flex-col w-full min-h-screen">
           <Navbar />
           <main className="flex-auto mt-7">

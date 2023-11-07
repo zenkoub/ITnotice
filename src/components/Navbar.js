@@ -43,12 +43,12 @@ export default function Navbar() {
                     </div>
                 </div>
             </div>
-            <div>
+            <div className="z-10">
                 <div className={`absolute bg-[#15284B] h-screen animate-delay-none transform transition duration-300 ${open ? 'w-52 scale-x-105' : 'w-20 scale-x-100'}`}>
                     <div className="relative h-20 border-b-2 border-white">
                         <button onClick={() => setOpen(!open)} className={`${router == '/' ? 'bg-[#FA6516]' : 'bg-red-800'} transition-transform h-full w-full `}>
                             <div className="flex justify-center items-center align-middle h-full">
-                                <FaArrowRightToBracket size={25} className={`${!open ? '' : '-scale-x-100'}`} />
+                                <FaArrowRightToBracket size={25} className={`text-white ${!open ? '' : '-scale-x-100'}`} />
                             </div>
                         </button>
                     </div>
@@ -58,10 +58,10 @@ export default function Navbar() {
                                 <button className={`${navs[router] == e.title ?'bg-[#FA6516]' : 'bg-red-800'} transition-transform h-full w-full`}>
                                     <div className="flex justify-center items-center align-middle h-full">
                                         {open ? <div className="flex items-center justify-center gap-2">
-                                            <e.icon size={25} />
-                                            <span className="text-lg">{e.title}</span>
+                                            <e.icon className="text-white" size={25} />
+                                            <span className="text-lg text-white">{e.title}</span>
                                         </div> :
-                                            <e.icon size={25} />
+                                            <e.icon className="text-white" size={25} />
                                         }
                                     </div>
                                 </button>

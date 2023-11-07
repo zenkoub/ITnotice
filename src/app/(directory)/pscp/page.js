@@ -4,7 +4,7 @@ import { ImCheckboxChecked } from 'react-icons/im'
 import axios from 'axios'
 
 export default async function page() {
-    const result = await (await axios('http://127.0.0.1:3001/PSCP')).data
+    const result = await (await axios('https://d109-161-246-72-2.ngrok-free.app/PSCP')).data
     const format_time = (val) => {
         const now = new Date(val);
         const hours = now.getHours();

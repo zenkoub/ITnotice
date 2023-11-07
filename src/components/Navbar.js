@@ -37,7 +37,7 @@ export default function Navbar() {
                 <div className="flex items-center justify-between h-full">
                     <Link href='\'>
                         <img className="w-40 object-fill" src="https://media.discordapp.net/attachments/1148602171068260384/1155540854681903134/ITnotice.png?ex=6547c248&is=65354d48&hm=9fdb9298dddf87a68ac301ad9cc9c9217351c8368ee917e1613839ea0158628f&=" />
-                    </Link> 
+                    </Link>
                     <div className="flex justify-center items-center">
                         <img className="rounded-full p-7" src="https://images-ext-1.discordapp.net/external/mukZM-_GodY98Mbmheh6MCF1tcS9cljHkTxH5joSWgI/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/685511264818036925/536ae4ef9e60ef9479d9044f88ffd81f.png?width=60&height=60" />
                     </div>

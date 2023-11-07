@@ -1,10 +1,10 @@
-import { GrCheckbox } from 'react-icons/gr'
+import { GrCheckbox, GrAddCircle, GrSubtractCircle } from 'react-icons/gr'
 import { AiOutlineStar, AiFillStar } from 'react-icons/ai'
 import { ImCheckboxChecked } from 'react-icons/im'
 import axios from 'axios'
 
 export default async function page() {
-    const result = await (await axios('http://127.0.0.1:3001')).data
+    const result = await (await axios('https://d109-161-246-72-2.ngrok-free.app')).data
     const format_time = (val) => {
         const now = new Date(val);
         const hours = now.getHours();
@@ -19,7 +19,7 @@ export default async function page() {
         <>
             <div>
                 <div className="bg-white ml-12 w-full h-[70px] rounded-2xl">
-                    <div className="grid grid-cols-4 text-center p-6">
+                    <div className="grid grid-cols-4 text-center p-4">
                         <div className='flex justify-center items-center text-black border-r-2 border-black'>
                             Primary
                         </div>
@@ -31,6 +31,9 @@ export default async function page() {
                         </div>
                         <div className='flex justify-center items-center text-black'>
                             <div className="flex text-black"> Platform </div>
+                        <div className='flex justify-items-end'>
+                            <button> <GrAddCircle className='justify-end w-8 h-8' color='black'/></button>
+                            <button> <GrSubtractCircle className='justify-end w-8 h-8' color='black'/></button></div>
                         </div>
                     </div>
                 </div>

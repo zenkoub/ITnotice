@@ -1,25 +1,14 @@
 "use client"
-import axios from "axios";
-import { useEffect, useState } from "react";
-
-export default function signin() {
-    const [repos, setRepos] = useState([]);
-
-    useEffect(() => {
-      // Make an Axios request to the GitHub API on the client side
-      axios.get('https://api.github.com/users/Zensos/repos')
-        .then((response) => {
-          setRepos(response.data);
-        })
-        .catch((error) => {
-          console.error('Error fetching GitHub repositories:', error);
-        });
-    }, []);
-    console.log(repos)
+import { useState } from 'react'
+export default function MyModal() {
+    const [open, setOpen] = useState(true)
     return (
         <>
-            <div className="text-white">
-                
+            <div>
+                {/* <button className='text-white' onClick={() => setOpen(!open)}>
+                    adsgasd
+                </button> */}
+                {/* <Form open={open} setOpen={setOpen}/> */}
             </div>
         </>
     )

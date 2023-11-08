@@ -4,10 +4,11 @@ import { AiOutlineStar, AiFillStar } from 'react-icons/ai'
 import { ImCheckboxChecked } from 'react-icons/im'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-import Link from 'next/link'
+import CreateForm from '@/components/CreateForm'
 
 export default function page() {
     const [result, setResult] = useState([])
+    const [open, setOpen] = useState(false)
     const [key, setKey] = useState('')
 
     useEffect(() => {
@@ -73,6 +74,7 @@ export default function page() {
     return (
         <>
             <div>
+                <CreateForm open={open} setOpen={setOpen}/>
                 <div className="bg-white ml-12 w-full h-[70px] rounded-2xl">
                     <div className="grid grid-cols-4 text-center p-4">
                         <a onClick={() => setKey('Primary')} className='flex justify-center items-center text-black border-r-2 border-black'>
@@ -89,7 +91,7 @@ export default function page() {
                                 Platform
                             </a>
                             <div className='flex justify-items-end'>
-                                <button> <GrAddCircle className='justify-end w-8 h-8' color='black' /></button>
+                                <button onClick={() => setOpen(!open)}> <GrAddCircle className='justify-end w-8 h-8' color='black' /></button>
                                 <button> <GrSubtractCircle className='justify-end w-8 h-8' color='black' /></button></div>
                         </div>
                     </div>

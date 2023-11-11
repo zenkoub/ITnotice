@@ -6,6 +6,7 @@ import { ImCheckboxChecked } from 'react-icons/im'
 import axios from 'axios'
 import CreateForm from '@/components/CreateForm'
 import { useRouter } from "next/navigation"
+import toast from "react-hot-toast"
 
 export default function Loader({ data }) {
     const [key, setKey] = useState('Primary')
@@ -19,16 +20,46 @@ export default function Loader({ data }) {
         router.refresh()
     }
     const handleStar = async (id) => {
+        const t = toast.loading('กำลังทำรายการ', {
+            style: {
+                borderRadius: '10px',
+                background: '#333',
+                color: '#fff',
+            },
+        })
         try {
             await axios.put(`http://127.0.0.1:3002/tasks/${id}/star`);
+            toast.success('เพิ่มรายการโปรดสำเร็จ', {
+                id: t, icon: '⭐️',
+                style: {
+                    borderRadius: '10px',
+                    background: '#333',
+                    color: '#fff',
+                },
+            })
         } catch (err) {
             console.log(err);
         }
         router.refresh()
     }
     const handleCheck = async (id) => {
+        const t = toast.loading('กำลังทำรายการ', {
+            style: {
+                borderRadius: '10px',
+                background: '#333',
+                color: '#fff',
+            },
+        })
         try {
             await axios.put(`http://127.0.0.1:3002/tasks/${id}/check`);
+            toast.success('เลือกสำเร็จ', {
+                id: t,
+                style: {
+                    borderRadius: '10px',
+                    background: '#333',
+                    color: '#fff',
+                },
+            })
         } catch (err) {
             console.log(err);
         }

@@ -5,7 +5,6 @@ import { IoIosCreate } from 'react-icons/io';
 import Input from '@/components/Input';
 import axios from 'axios';
 import toast from 'react-hot-toast';
-import { GrAddCircle } from 'react-icons/gr';
 import { useRouter } from 'next/navigation';
 
 export default function CreateForm() {
@@ -30,7 +29,13 @@ export default function CreateForm() {
   const [description, setDescription] = useState('');
   const router = useRouter()
   const handleSubmit = async () => {
-    const id = toast.loading("กำลังสร้างข้อมูล...");
+    const id = toast.loading("กำลังสร้างข้อมูล...", {
+      style: {
+        borderRadius: '10px',
+        background: '#333',
+        color: '#fff',
+      },
+    });
     try {
       const { data } = await axios.post('http://localhost:3002/tasks', {
         category: category.name,
@@ -38,7 +43,14 @@ export default function CreateForm() {
         description,
       });
       if (data) {
-        toast.success(data.message, { id });
+        toast.success(data.message, {
+          id,
+          style: {
+            borderRadius: '10px',
+            background: '#333',
+            color: '#fff',
+          },
+        });
         setOpen(false);
       }
     } catch (error) {

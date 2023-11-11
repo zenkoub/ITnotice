@@ -5,45 +5,34 @@ import { AiOutlineStar, AiFillStar } from 'react-icons/ai'
 import { ImCheckboxChecked } from 'react-icons/im'
 import axios from 'axios'
 import CreateForm from '@/components/CreateForm'
+import { useRouter } from "next/navigation"
 
 export default function Loader({ data }) {
     const [key, setKey] = useState('Primary')
+    const router = useRouter()
     const handleRead = async (id) => {
         try {
             await axios.put(`http://127.0.0.1:3002/tasks/${id}/read`);
-
-            setResult((prevResult) => {
-                return prevResult.map((task) =>
-                    task.id === id ? { ...task, read: true } : task
-                );
-            });
         } catch (err) {
             console.log(err);
         }
+        router.refresh()
     }
     const handleStar = async (id) => {
         try {
             await axios.put(`http://127.0.0.1:3002/tasks/${id}/star`);
-            setResult((prevResult) => {
-                return prevResult.map((task) =>
-                    task.id === id ? { ...task, star: !task.star } : task
-                );
-            });
         } catch (err) {
             console.log(err);
         }
+        router.refresh()
     }
     const handleCheck = async (id) => {
         try {
             await axios.put(`http://127.0.0.1:3002/tasks/${id}/check`);
-            setResult((prevResult) => {
-                return prevResult.map((task) =>
-                    task.id === id ? { ...task, check: !task.check } : task
-                );
-            });
         } catch (err) {
             console.log(err);
         }
+        router.refresh()
     }
     const format_time = (val) => {
         const now = new Date(val);
@@ -55,7 +44,6 @@ export default function Loader({ data }) {
 
         return timeString
     }
-
     return (
         <>
             <div className="bg-white ml-12 w-full h-[70px] rounded-2xl">
@@ -91,16 +79,16 @@ export default function Loader({ data }) {
                             </span>}
                             <div className="flex items-center justify-between h-20 w-full rounded-md bg-white border-2 border-black mt-4 my-auto">
                                 <div className='flex items-center'>
-                                    <button onClick={async () => { await handleCheck(e.id) }}>
+                                    <button onClick={() => handleCheck(e.id)}>
                                         {!e.check ? <GrCheckbox className="pl-4 w-10 h-10" color="white" /> : <ImCheckboxChecked className="pl-4 w-10 h-10" color="black" />}
                                     </button>
-                                    <button onClick={async () => { await handleStar(e.id) }}>
+                                    <button onClick={() => handleStar(e.id)}>
                                         {!e.star ? <AiOutlineStar className="ml-2 w-10 h-10" color="black" /> : <AiFillStar className="text-[#FFE559] ml-2 w-10 h-10" />}
                                     </button>
 
                                     <div className="text-black pl-4 text-2xl font-bold"> {e.subject} </div>
                                 </div>
-                                <button onClick={async () => { await handleRead(e.id) }}>
+                                <button onClick={() => handleRead(e.id)}>
                                     <div className='flex mr-96'>
                                         <div className="text-black pl-20 text-2xl font-bold">({e.category.slice(0, 1)})</div>
                                         <div className="text-[#AAAAAA] pl-4 text-2xl"> - {e.description} </div>

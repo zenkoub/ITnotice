@@ -65,8 +65,10 @@ export default function Loader({ data }) {
             <div className='bg-[#CCCCCC] ml-12 w-full h-full p-4 rounded-lg mt-4'>
                 <div>
                     <div>
-                        <CreateForm />
-                        <button> <GrSubtractCircle className='justify-end w-8 h-8' color='black' /></button>
+                        <div className="flex w-full h-10 bg-white items-center justify-between rounded-md">
+                            <div onClick={() => setOpen(!open)} className="flex items-center justify-center p-4 rounded-tl-md rounded-bl-md text-white font-bold bg-orange-900 h-full w-16"> </div>
+                            <CreateForm />
+                        </div>
                     </div>
                 </div>
                 {

@@ -179,7 +179,7 @@ export default function CreateForm() {
           </div>
         </Dialog>
       </Transition>
-      <button > <GrAddCircle onClick={() => setOpen(!open)} className='justify-end w-8 h-8' color='black' /></button>
+      <button onClick={() => setOpen(!open)} className="flex items-center justify-center p-4 rounded-tr-md rounded-br-md text-white font-bold bg-orange-900 h-full w-auto"> ADD </button>
 
     </>
   );

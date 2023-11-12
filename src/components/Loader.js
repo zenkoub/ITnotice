@@ -13,7 +13,7 @@ export default function Loader({ data }) {
     const router = useRouter()
     const handleRead = async (id) => {
         try {
-            await axios.put(`https://082b-58-97-49-99.ngrok-free.app/tasks/${id}/read`);
+            await axios.put(`http://127.0.0.1:3002/tasks/${id}/read`);
         } catch (err) {
             console.log(err);
         }
@@ -28,7 +28,7 @@ export default function Loader({ data }) {
             },
         })
         try {
-            await axios.put(`https://082b-58-97-49-99.ngrok-free.app/tasks/${id}/star`);
+            await axios.put(`http://127.0.0.1:3002/tasks/${id}/star`);
             toast.success('เพิ่มรายการโปรดสำเร็จ', {
                 id: t, icon: '⭐️',
                 style: {
@@ -51,7 +51,7 @@ export default function Loader({ data }) {
             },
         })
         try {
-            await axios.put(`https://082b-58-97-49-99.ngrok-free.app/tasks/${id}/check`);
+            await axios.put(`http://127.0.0.1:3002/tasks/${id}/check`);
             toast.success('เลือกสำเร็จ', {
                 id: t,
                 style: {

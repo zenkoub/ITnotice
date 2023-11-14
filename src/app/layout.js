@@ -15,7 +15,7 @@ export const metadata = {
 export default function Layout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-[#03001C] text-white">
+      <body className="bg-[#03001C]">
         <Toaster />
         <Navbar />
         <main className="flex-auto mt-2">

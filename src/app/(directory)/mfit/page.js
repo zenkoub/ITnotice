@@ -3,9 +3,7 @@ import Loader from '@/components/Loader'
 
 export default async function page() {
     const result = await fetch('https://2b55-165-22-25-77.ngrok-free.app/tasks/MFIT', {
-        headers: {
-            "Cache-Control": "no-cache"
-        }
+        cache: "no-store",
     }).then(res => res.json())
 
     return (

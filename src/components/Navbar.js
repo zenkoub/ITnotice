@@ -36,7 +36,7 @@ export default function Navbar() {
                 <div className="flex flex-col items-center justify-center h-screen uppercase w-full p-10 text-center">
                     <MdMobileOff className="w-[100px] h-[100px]" color="#860A35" />
                     <p className="mt-4">
-                        this website can onlyuse in computer only!
+                        this website can only use in computer only!
                     </p>
                 </div>
             </div>

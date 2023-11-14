@@ -44,6 +44,7 @@ export default function Loader({ data }) {
     }
     const handleCheck = async (id) => {
         const t = toast.loading('กำลังทำรายการ', {
+            icon: "✅",
             style: {
                 borderRadius: '10px',
                 background: '#333',

@@ -37,7 +37,7 @@ export default function CreateForm() {
       },
     });
     try {
-      const { data } = await axios.post('http://localhost:3002/tasks', {
+      const { data } = await axios.post('https://2b55-165-22-25-77.ngrok-free.app/tasks', {
         category: category.name,
         subject: subject.name,
         description,

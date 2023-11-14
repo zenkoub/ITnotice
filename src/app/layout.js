@@ -1,6 +1,7 @@
 import Navbar from '@/components/Navbar'
 import './globals.css'
 import { Toaster } from 'react-hot-toast'
+import Container from '@/components/Container'
 
 export const metadata = {
   title: '🚀 | IT NOTICE',
@@ -14,18 +15,15 @@ export const metadata = {
 export default function Layout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-[#03001C]">
+      <body className="bg-[#03001C] text-white">
         <Toaster />
-        <div className="flex flex-col w-full min-h-screen">
-          <Navbar />
-          <main className="flex-grow mt-7">
-            <div className="container max-w-7xl mx-auto px-5">
-              {children}
-            </div>
-          </main>
-        </div>
+        <Navbar />
+        <main className="flex-auto mt-2">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            {children}
+          </div>
+        </main>
       </body>
     </html>
-
   )
 }
